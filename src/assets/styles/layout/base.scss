@@ -1,0 +1,21 @@
+body,html{
+  height:100% ;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif ;
+  font-size: 16px;
+  line-height: 1.42;
+  color: $text-color;
+}
+
+.wrapper{
+  overflow: hidden;
+  min-height: 100%;
+  position: relative;
+}
+
+.container{
+  margin: 0 auto;
+  width: 95%;
+}

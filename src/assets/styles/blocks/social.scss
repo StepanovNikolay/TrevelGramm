@@ -1,0 +1,22 @@
+.social-hero{
+  width: 180px;
+  position: absolute;
+  bottom: 10%;
+  right: 44%;
+}
+
+
+
+
+
+
+.social__list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.social__img{
+  &:hover{
+    filter: saturate(300%);
+  }
+}

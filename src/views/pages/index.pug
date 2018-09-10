@@ -4,6 +4,45 @@ block variables
     -var title = 'Блядская сборка'
 
 block content 
-    h1 Ну заработай ты уже блять склько можно нахуй мозги ебать то уже !!!!!!!!!!!
+    section.hero
+       header.header
+          .logo
+             .logo__link
+                a(href="#").link 
+                    img(src="../assets/images/icons/Brandi.png", alt="logo").logo__img
+             .logo__text I’am your tag line
+          nav.nav
+           .nav__menu
+              ul.nav__list
+                 li.nav__elem Home 
+                 li.nav__elem Features
+                 li.nav__elem Works
+                 li.nav__elem Team
+                 li.nav__elem Contact
+       .hero-text 
+             ul.hero-text__list
+                 li.hero-text__title Meet 
+                         span.hero-text__span-title Brandi!
+                 li.hero-text__midle /creative 
+                       span.hero-text__span one page template.
+                 li.hero-text__bottom We are a team of professionals 
+       .social-hero
+           ul.social__list
+               -
+                 var social = [
+                    ['./assets/images/icons/twitter.png', '#'],
+                    ['./assets/images/icons/facebook.png','#'],
+                    ['./assets/images/icons/google+.png','#'],
+                    ['./assets/images/icons/dribbble.png','#'] 
+                 ]
+               each item in social
+                 li.social__elem
+                    a(href=`${item[1]}`).social__link
+                         img(src=`${item[0]}`, alt="social").social__img
+                 
+
+
+
+          
 block scripts 
       script(src='/assets/scripts/index.bundle.js')

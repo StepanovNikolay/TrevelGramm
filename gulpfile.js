@@ -10,6 +10,7 @@ const webpackCongig = require('./webpack.config');
 const browserSync = require('browser-sync').create();
 
 
+
 const paths = {
     root: './dist',
     templates: {
@@ -25,13 +26,29 @@ const paths = {
     scripts: {
       src: './src/assets/scripts/*.js',
       dest: './dist/assets/scripts'
+    },
+    fonts: {
+      src: './src/assets/fonts/*.*',
+      dest: './dist/assets/fonts'
+    },
+    images: {
+      src: './src/assets/images/*.*',
+      dest: './dist/assets/images'
+    },
+    icons: {
+      src: './src/assets/images/icons/*.*',
+      dest: './dist/assets/images/icons'
     }
 }
+
+
 
 function watch() {
   gulp.watch(paths.templates.src, templates);
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.scripts.src, scripts);
+  gulp.watch(paths.fonts.src, fonts);
+
 }
 
 function server() {
@@ -68,13 +85,37 @@ function scripts() {
   .pipe(gulp.dest(paths.scripts.dest));
 }
 
+
+function fonts() {
+ return gulp.src(paths.fonts.src)
+ .pipe(gulp.dest(paths.fonts.dest))
+}
+
+function images() {
+  return gulp.src(paths.images.src)
+  .pipe(gulp.dest(paths.images.dest))
+}
+
+function icons() {
+  return gulp.src(paths.icons.src)
+  .pipe(gulp.dest(paths.icons.dest))
+}
+ 
+
+
 exports.templates = templates;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.clean = clean;
+exports.fonts = fonts;
+exports.images = images;
+exports.icons = icons;
+
+
+
 
 gulp.task('default',gulp.series(
   clean,
-  gulp.parallel(styles, templates, scripts),
-  gulp.parallel(watch, server)
+  gulp.parallel(styles, templates, scripts, fonts, images, icons),
+  gulp.parallel(watch, server )
 ));

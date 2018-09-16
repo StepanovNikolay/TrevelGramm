@@ -1,7 +1,7 @@
 extends ../main.layout.pug
 
 block variables
-    -var title = 'Блядская сборка'
+    -var title = 'Lending page'
 
 block content 
     section.hero
@@ -27,20 +27,98 @@ block content
                        span.hero-text__span one page template.
                  li.hero-text__bottom We are a team of professionals 
        .social-hero
-           ul.social__list
-               -
-                 var social = [
-                    ['./assets/images/icons/twitter.png', '#'],
-                    ['./assets/images/icons/facebook.png','#'],
-                    ['./assets/images/icons/google+.png','#'],
-                    ['./assets/images/icons/dribbble.png','#'] 
-                 ]
-               each item in social
-                 li.social__elem
-                    a(href=`${item[1]}`).social__link
-                         img(src=`${item[0]}`, alt="social").social__img
+         ul.social__list
+             -
+                 var social =[
+                     ['facebook','#'],
+                     ['twitter','#'],
+                     ['googleplus','#'],
+                     ['dribbble','#'],
+                  ]
+             each item in social
+               li.social__elem
+                a(href=`${item[1]}`).social__link
+                  +icon(item[0],'social-img')
                  
+    section.services
+     .features
+        .title-bandi
+              h3.title-text Features
+              img.title-img(src="./assets/images/icons/heart-empty.png", alt="")
+        .features-service
+           ul.features-list
+              li.features-elem
+                  .elem-title Branding
+                  .elem-img 
+                     img(src="./assets/images/icons/feather.png", alt="").img__features
+                  .elem-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+              li.features-elem
+                  .elem-title Devtlopoment
+                  .elem-img
+                     img(src="./assets/images/icons/pencil.png", alt="").img__features
+                  .elem-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+              li.features-elem
+                  .elem-title Consulting
+                  .elem-img
+                     img(src="./assets/images/icons/megaphone.png", alt="").img__features
+                     
+                  .elem-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+     .works
+        .title-bandi
+              h3.title-text Works
+              img.title-img(src="./assets/images/icons/heart-empty.png", alt="")
+        .works-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+        .works-buttons
+           ul.works__list
+             -
+                var btn = [
+                      ['All'],
+                      ['Branding'],
+                      ['Web'],
+                      ['Logo Design'],
+                      ['Phfotografy']
+                        ]
+             each item in btn 
+              li.works__elem #{item[0]}
+    section.images
+      ul.images-list
+        -
+          var images = [
+                      ['./assets/images/Layer 15.jpg'],
+                      ['./assets/images/Layer 17.jpg'],
+                      ['./assets/images/Layer 19.jpg'],
+                      ['./assets/images/Layer 18.jpg']
+                          ]
+        each item in images
+          li.images__elem
+             img(src=`${item[0]}`, alt="").images__pic
+             ul.opacity-list
+               li.opaciti__elem-pic
+                   img.opaciyt__img(src="./assets/images/icons/Vector Smart Object.png", alt="")
+               li.opaciti__elem Labore et dolore magnam                 
+               li.opaciti__elem.opaciti__elem--small Photography                     
 
+      ul.images-list
+        -
+          var images = [
+                     
+                      ['./assets/images/Layer 22.jpg'],
+                      ['./assets/images/Layer 20.jpg'],
+                      ['./assets/images/Layer 13.jpg'],
+                      ['./assets/images/Layer 21.jpg']
+
+                        ]
+        each item in images
+          li.images__elem
+             img(src=`${item[0]}`, alt="").images__pic  
+             ul.opacity-list
+               li.opaciti__elem-pic
+                   img.opaciyt__img(src="./assets/images/icons/Vector Smart Object.png", alt="")
+               li.opaciti__elem Labore et dolore magnam                 
+               li.opaciti__elem.opaciti__elem--small Photography                     
+    section.new
+           
+        
 
 
           

@@ -1,0 +1,34 @@
+.works__list{
+  display: flex;
+  
+}
+
+.works__elem{
+  font-size: 14px;
+  font-family: sanssemibold;
+   margin-right: 22px;
+  white-space: nowrap;
+  cursor: pointer;
+  padding-left: 1%;
+  padding-right: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border-radius: 13%;
+  &:active{
+    background: #0eb493;
+    color: #fff;
+  }
+}
+
+
+.works-buttons{
+  
+  width: 100%;
+  position: relative;
+  top: 23%;
+  left: 32%;
+}
+
+

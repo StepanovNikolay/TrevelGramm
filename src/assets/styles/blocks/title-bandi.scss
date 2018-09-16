@@ -1,0 +1,49 @@
+.title-bandi{
+  position: relative;
+  bottom: 12%;
+  &::after{
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 1px;
+    background: #dce1e5;
+    left: 77%;
+    top: 78%
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 1px;
+    background: #dce1e5;
+    right: 77%;
+    top: 78%
+  }
+}
+
+
+
+
+.title-text{
+  font-size: 28px;
+  color: #0eb493;
+  text-transform: uppercase;
+  font-family: MyriadPro;
+}
+
+
+.title-img{
+  position: relative;
+  left: 41%;
+
+}
+
+
+
+&::after{
+  content: "";
+  position: relative;
+  width: 90px;
+  height: 1px;
+  background: #dce1e5;
+}

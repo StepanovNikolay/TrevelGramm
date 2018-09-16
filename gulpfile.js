@@ -8,6 +8,10 @@ const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
 const webpackCongig = require('./webpack.config');
 const browserSync = require('browser-sync').create();
+const svgSprite = require('gulp-svg-sprite'),
+    svgmin = require('gulp-svgmin')   
+    cheerio = require('gulp-cheerio'),
+    replace = require('gulp-replace');
 
 
 
@@ -32,13 +36,45 @@ const paths = {
       dest: './dist/assets/fonts'
     },
     images: {
-      src: './src/assets/images/*.*',
+      src: './src/assets/images/*.jpg',
       dest: './dist/assets/images'
     },
     icons: {
-      src: './src/assets/images/icons/*.*',
+      src: './src/assets/images/icons/*.png',
+      dest: './dist/assets/images/icons'
+    },
+    svg: {
+      src: './src/assets/images/icons/*.svg',
       dest: './dist/assets/images/icons'
     }
+    
+}
+
+
+function svg() {
+  return gulp.src(paths.svg.src)
+  .pipe(svgmin({
+    js2svg: {
+      pretty: true
+    }
+  }))
+  .pipe(cheerio({
+    run: function($) {
+      $('[fill]').removeAttr('fill');
+      $('[stroke]').removeAttr('stroke');
+      $('[style]').removeAttr('style');
+    },
+    parserOptions: {xmlMode: true}
+  }))
+  .pipe(replace('&gt;','>'))
+  .pipe(svgSprite({
+    mode: {
+      symbol: {
+        sprite: "sprite.svg"
+      }
+    }
+  }))
+  .pipe(gulp.dest(paths.svg.dest));
 }
 
 
@@ -48,6 +84,8 @@ function watch() {
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.scripts.src, scripts);
   gulp.watch(paths.fonts.src, fonts);
+  gulp.watch(paths.svg.src, svg);
+
 
 }
 
@@ -110,12 +148,14 @@ exports.clean = clean;
 exports.fonts = fonts;
 exports.images = images;
 exports.icons = icons;
+exports.svg = svg;
+
 
 
 
 
 gulp.task('default',gulp.series(
   clean,
-  gulp.parallel(styles, templates, scripts, fonts, images, icons),
+  gulp.parallel(styles, templates, scripts, fonts, images, icons, svg),
   gulp.parallel(watch, server )
 ));

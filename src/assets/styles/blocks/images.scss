@@ -1,0 +1,91 @@
+.images-list{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+
+.images__elem{
+  width: calc(100%/4);
+  height: 100%;
+  position: relative;
+  
+  &:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/Rectangle 5 copy 3.jpg')center center /cover no-repeat;
+    opacity: 0;
+    transition: 0.5s;
+    }
+    &:hover{
+      &::after{
+        opacity:0.8 ;
+              }
+      
+    }
+    &:hover .opacity-list {
+      opacity: 1;
+    }
+}
+
+.images__pic{
+  width: 100%;
+  height: 100%;
+
+}
+
+.opacity-list{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.5s;
+  
+}
+
+.opaciti__elem{
+  color: #ffff;
+  font-size: 18px;
+  font-family: sansextrabold; 
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+
+.opaciti__elem--small {
+  font-size: 14px;
+  font-family: MyriadPro;
+}
+
+
+.opaciti__elem-pic{
+  border: 1px solid #fff;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  left: 44%;
+  position: relative;
+  margin-bottom: 4%;
+
+}
+
+.opaciyt__img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  
+}

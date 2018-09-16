@@ -15,8 +15,12 @@
   justify-content: space-between;
 }
 
-.social__img{
-  &:hover{
-    filter: saturate(300%);
+.social-img{
+  fill: #566f69;
+  width: 30px;
+  height: 30px;
+  transition: 0.5s;
+  &:hover {
+    fill: #ffff;
   }
 }

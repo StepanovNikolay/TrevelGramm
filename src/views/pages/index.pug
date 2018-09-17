@@ -116,8 +116,42 @@ block content
                    img.opaciyt__img(src="./assets/images/icons/Vector Smart Object.png", alt="")
                li.opaciti__elem Labore et dolore magnam                 
                li.opaciti__elem.opaciti__elem--small Photography                     
-    section.new
-           
+    section.team
+     .title-bandi.title-bandi--team
+              h3.title-text meet or team
+              img.title-img(src="./assets/images/icons/heart-empty.png", alt="")
+     .works-text.works-text--team Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+     ul.images-list.images-list--team
+        -
+          var images = [
+                     
+                      ['./assets/images/Layer 24.jpg'],
+                      ['./assets/images/Layer 25.jpg'],
+                      ['./assets/images/Layer 26.jpg'],
+                      ['./assets/images/Layer 27.jpg']
+
+                        ]
+        each item in images
+          li.images__elem.images__elem--team
+             img(src=`${item[0]}`, alt="").images__pic  
+             ul.opacity-list
+                li.opaciti__elem.opaciti__elem--team Nemo enim ipsam voluptatem quia voluptas 
+                li.opaciti__elem.opaciti__elem--small sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
+                li.opaciti__elem-pic.opaciti__elem-pic--team
+                     -
+                      var socialTeam = [
+                        ['./assets/images/icons/FB.png','#'],
+                        ['./assets/images/icons/twitter.png','#'],
+                        ['./assets/images/icons/G+.png','#']
+                               ]
+                     each item in socialTeam
+                      a.team-socal(href=`${item[1]}`)
+                        img.team-img(src=`${item[0]}`, alt="")
+    section.facts
+        .title-bandi.title-bandi--facts
+              h3.title-text Some Fun Facts
+              img.title-img(src="./assets/images/icons/heart-empty copy.png", alt="")
+    section.contacs                   
         
 
 

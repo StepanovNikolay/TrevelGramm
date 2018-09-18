@@ -151,8 +151,63 @@ block content
         .title-bandi.title-bandi--facts
               h3.title-text Some Fun Facts
               img.title-img(src="./assets/images/icons/heart-empty copy.png", alt="")
+        .facts__title
+          ul.facts__list
+           -
+            var facts = [
+             ['./assets/images/icons/Clock.png','3200','Hours of Work'],
+             ['./assets/images/icons/Friends.png','120','Satisfied Clinets'],
+             ['./assets/images/icons/Rocket.png','360','Projects delivered'],
+             ['./assets/images/icons/Cup.png','42','Awards Won']
+            ]
+           each item in facts
+             li.facts__elem
+                .facts__pic
+                  img.facts__img(src=`${item[0]}`, alt="")
+                .facts__number #{item[1]}
+                .facts__text #{item[2]}
     section.contacs                   
-        
+         .title-bandi.title-bandi--contacs
+              h3.title-text Let's discuss
+              img.title-img(src="./assets/images/icons/heart-empty.png", alt="")
+         .works-text.works-text--contacs Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+         .contacs__content
+           .contacs__text
+              .contacs__title Cras at ultrices erat, sed vulpu-tate!
+              .contacs__small  2345 Setwant natrer, 1234, Washington. United States. (401) 1234 567 hello@brandi.com ww.brandi.com
+           form.contacs__form(action="")
+             .form__title
+               h2.form__text Say hello !
+             .form__elem 
+               label.form-block
+                 input(type="text" class="form-input" placeholder="Name" )
+               label.form-block.form-block--nomargin
+                 input(type="text" class="form-input" placeholder=" Email" )
+             label.form-block.form-block--message
+                input(type="text" class="form-input form-input--message" placeholder="Message" )
+             .form__btn
+              button.form__click Send message
+                img.btn__img(src="./assets/images/icons/Envelope.png", alt="")
+           .contacs__social
+              ul.contacs__list
+               -
+                var contacsSocial = [
+                    ['./assets/images/icons/behance.png','#'],
+                    ['./assets/images/icons/twitter2.png','#'],
+                    ['./assets/images/icons/dribbble.png','#'],
+                    ['./assets/images/icons/forrst.png','#'],
+                    ['./assets/images/icons/google plus.png','#']
+                          ]
+               each item in contacsSocial
+                li.contacs__elem 
+                  a.contacs__link(href=`${item[1]}`)
+                   img.contacs__img(src=`${item[0]}`, alt="")
+         .contacs__map  
+
+
+
+
+
 
 
           

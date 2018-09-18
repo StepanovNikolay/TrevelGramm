@@ -1,0 +1,46 @@
+.facts__title{
+  width: 100%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  left: 44%;
+}
+
+.facts__elem{
+  margin-left: 174px;
+}
+.facts__list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facts__pic{
+  border-radius: 50%;
+  border: 1px solid #ffff;
+  height: 130px;
+  width: 130px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.facts__img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+   transform:translate(-50%,-50%); 
+}
+
+.facts__number{
+  font-size: 60px;
+  color: #fff;
+  font-family: sanssemibold;
+}
+
+.facts__text{
+  font-size: 18px;
+  color: #fff;
+  font-family: MyriadPro;
+}

@@ -12,23 +12,6 @@
 }
 
 
-.logo__link{
-  width: 123px;
-  &:before{
-    position: relative;
-    content: "";
-    width: 1px;
-    height: 20px;
-    background: #17526e;
-    display: inline-block;
-    left: 110px
-  }
-}
-
-.logo{
-  display: flex;
-  align-items: center;
-}
 
 .nav__list{
   display: flex;

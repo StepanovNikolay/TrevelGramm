@@ -1,4 +1,12 @@
 .futer{
   height: 404px;
   width: 100%;
+  display: block;
+  background: #1ea78d;
+}
+
+.futer-content{
+  display: flex;
+  position: relative;
+  top: 40%;
 }

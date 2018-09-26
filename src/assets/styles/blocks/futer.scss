@@ -3,10 +3,79 @@
   width: 100%;
   display: block;
   background: #1ea78d;
+  font-family: sansregular;
+  font-size: 13px;
+  color: #Ffff;
 }
 
 .futer-content{
   display: flex;
   position: relative;
   top: 40%;
+  justify-content: space-around;
+}
+
+
+.futer__title{
+  position: relative;
+  bottom: 40%;
+}
+.futer__list{
+  display: flex;
+}
+.futer__row{
+  position: relative;
+  right: 19%;
+  margin-right: 7%
+}
+
+.futer__elem{
+  margin-bottom: 13%;
+  width: 107px;
+}
+
+
+.futer__text{
+  width: 254px;
+  line-height: 1.80;
+}
+
+.futer__smalltext{
+  width: 230px;
+}
+
+
+.fut__btn{
+  width: 100%;
+  background: #1ea78d;
+  border: 1px solid #ffff;
+  height: 32px;
+  text-align: right;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 12%;
+}
+
+.ps__title{
+  width: 198px;
+  margin-bottom: 31%;
+  &::before{
+    content: "";
+    position: absolute;
+    height: 37px;
+    width: 1px;
+    background: black;
+    right: 106%;
+  }
+
+}
+
+
+.ps__text{
+  color: black;
+}
+
+.futer__PS{
+  margin-right: 6%;
+  position: relative;
 }

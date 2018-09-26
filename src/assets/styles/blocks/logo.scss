@@ -19,6 +19,10 @@
 
 
 .logo__link--futer{
+  position: relative;
+  bottom: 88%;
+  left: 129%;
+
 &::before{
   display: none;
 }

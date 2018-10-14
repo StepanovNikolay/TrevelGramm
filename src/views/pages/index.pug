@@ -3,6 +3,9 @@ extends ../main.layout.pug
 block variables
     -var title = 'Lending page'
 
+block scripts 
+      script(src='assets/scripts/index.bundle.js')
+
 block content 
     section.hero
        header.header
@@ -211,5 +214,3 @@ block content
 
 
           
-block scripts 
-      script(src='/assets/scripts/index.bundle.js')
